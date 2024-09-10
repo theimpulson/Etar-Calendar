@@ -32,7 +32,7 @@ import java.util.TimeZone;
 
 import ws.xsoh.etar.R;
 
-public class ImportActivity extends Activity {
+public class ImportActivity extends AbstractCalendarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

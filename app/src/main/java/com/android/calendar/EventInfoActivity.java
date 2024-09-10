@@ -30,7 +30,6 @@ import android.provider.CalendarContract.Attendees;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -41,7 +40,7 @@ import java.util.List;
 
 import ws.xsoh.etar.R;
 
-public class EventInfoActivity extends AppCompatActivity {
+public class EventInfoActivity extends AbstractCalendarActivity {
 
     private static final String TAG = "EventInfoActivity";
     private EventInfoFragment mInfoFragment;

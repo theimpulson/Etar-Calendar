@@ -16,15 +16,44 @@
 
 package com.android.calendar;
 
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public abstract class AbstractCalendarActivity extends AppCompatActivity {
     protected AsyncQueryService mService;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setupEdgeToEdge();
+    }
 
     public synchronized AsyncQueryService getAsyncQueryService() {
         if (mService == null) {
             mService = new AsyncQueryService(this);
         }
         return mService;
+    }
+
+    private void setupEdgeToEdge() {
+        // Only required since Android 15
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) return;
+
+        View rootView = getWindow().getDecorView().getRootView();
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        ViewCompat.setOnApplyWindowInsetsListener(rootView,
+                (v, windowInsets) -> {
+                    Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+                    v.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+                    return WindowInsetsCompat.CONSUMED;
+                });
     }
 }

@@ -16,19 +16,19 @@
 
 package com.android.calendar.alerts;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.widget.TimePicker;
 
+import com.android.calendar.AbstractCalendarActivity;
 import com.android.calendar.Utils;
 import com.android.calendar.settings.GeneralPreferences;
 
 import ws.xsoh.etar.R;
 
-public class SnoozeDelayActivity extends Activity implements
+public class SnoozeDelayActivity extends AbstractCalendarActivity implements
         TimePickerDialog.OnTimeSetListener, DialogInterface.OnCancelListener {
     private static final int DIALOG_DELAY = 1;
 

@@ -18,9 +18,9 @@
 package com.android.calendar.settings
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.android.calendar.AbstractCalendarActivity
 import com.android.calendar.DynamicTheme
 import ws.xsoh.etar.R
 import ws.xsoh.etar.databinding.SimpleFrameLayoutMaterialBinding
@@ -35,7 +35,7 @@ const val EXTRA_SHOW_FRAGMENT = "settingsShowFragment"
  * - Added EXTRA_SHOW_FRAGMENT
  * - Don't assume title from setting, instead set it in each fragment individually
  */
-class SettingsActivity : AppCompatActivity(),
+class SettingsActivity : AbstractCalendarActivity(),
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
 
     private val dynamicTheme = DynamicTheme()

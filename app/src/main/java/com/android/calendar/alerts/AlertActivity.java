@@ -17,7 +17,6 @@
 package com.android.calendar.alerts;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.TaskStackBuilder;
 import android.content.ContentValues;
@@ -37,6 +36,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.android.calendar.AbstractCalendarActivity;
 import com.android.calendar.AsyncQueryService;
 import com.android.calendar.EventInfoActivity;
 import com.android.calendar.Utils;
@@ -52,7 +52,7 @@ import ws.xsoh.etar.databinding.AlertActivityBinding;
  * The alert panel that pops up when there is a calendar event alarm.
  * This activity is started by an intent that specifies an event id.
   */
-public class AlertActivity extends Activity implements OnClickListener {
+public class AlertActivity extends AbstractCalendarActivity implements OnClickListener {
     public static final int INDEX_ROW_ID = 0;
     public static final int INDEX_TITLE = 1;
     public static final int INDEX_EVENT_LOCATION = 2;

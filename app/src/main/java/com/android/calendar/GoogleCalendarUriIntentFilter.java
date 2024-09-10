@@ -17,7 +17,6 @@
 
 package com.android.calendar;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
@@ -41,7 +40,7 @@ import com.android.calendarcommon2.Duration;
 
 import ws.xsoh.etar.R;
 
-public class GoogleCalendarUriIntentFilter extends Activity {
+public class GoogleCalendarUriIntentFilter extends AbstractCalendarActivity {
     static final boolean debug = false;
     private static final String TAG = "GoogleCalendarUriIntentFilter";
     private static final int EVENT_INDEX_ID = 0;
